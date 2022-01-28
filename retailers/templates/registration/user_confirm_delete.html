@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+
+{% block title %}User Account Delete{% endblock title %}
+
+{% block content %}
+
+
+{% if user.is_authenticated %}
+<form method="post">
+    {% csrf_token %}
+    <p>Hi, are you sure you want to delete the account of {{user.name}}?</p>
+    <input class="btn btn-danger" type="submit" value="Confirm">
+</form>
+<br>
+<div>
+    <a class="btn btn-info" href="{% url 'home' %}">Back to homepage</a>
+</div>
+{% else %}
+<p><a href="{% url 'login' %}">Login</a></p>
+{% endif %}
+{% endblock content %}

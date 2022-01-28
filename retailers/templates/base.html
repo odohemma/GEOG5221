@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" type="text/css" href="https:///unpkg.com/leaflet@1.7.1//dist/leaflet.css" />
+        <script src="https:///unpkg.com/leaflet@1.7.1//dist/leaflet.js"></script>
+
+        <!-- JS Reference for Marker Cluster-->
+        <!-- <link rel="stylesheet" href="/static/plugins/Leaflet.markercluster/dist/MarkerCluster.css" /> -->
+        <!-- <link rel="stylesheet" href="/static/plugins/Leaflet.markercluster/dist/MarkerCluster.Default.css" /> -->
+        <!-- <script src="/static/plugins/Leaflet.markercluster/dist/leaflet.markercluster-src.js"></script> -->
+
+
+        <!-- http://bl.ocks.org/ismyrnow/6123517 -->
+        <script src="https://rawgithub.com/ismyrnow/Leaflet.groupedlayercontrol/master/src/leaflet.groupedlayercontrol.js"></script>
+
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <title>Filling Stations</title>
+
+        <style>
+            body {
+                padding-top: 4rem;
+            }
+        </style>
+        <link rel="stylesheet" type="text/css" href="{% static 'map.css' %}" />
+    </head>
+
+    <body class="container-fluid" style="width: 97%;">
+
+        <nav class="container-fluid navbar navbar-expand-md navbar-light fixed-top bg-light" style="width: 100%;">
+            <a href="{% url  'home' %}" class="navbar-brand">In Stock Petroleum Products</a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            {% if user.is_authenticated %}
+            <div id="navbarCollapse" class="collapse navbar-collapse">
+
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">{{user.name}}</a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a href="{% url 'profile' %}" class="dropdown-item">Profile</a>
+                            <a href="{% url 'password_change' %}" class="dropdown-item">Change Password</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="{% url 'logout' %}" class="dropdown-item">Logout</a>
+                            <a href="{% url 'user_confirm_delete' user.id %}" class="dropdown-item">Delete Account</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            {% else %}
+            <div id="navbarCollapse" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}">Login as Retailer</a>
+                    </li>
+                </ul>
+            </div>
+            {% endif %}
+        </nav>
+
+
+        {% block content %}
+
+        {% endblock %}
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    </body>

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+
+
+{% block content %}
+
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+{{ form.media }}
+
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Signup for a retailer account</h4>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{form|crispy}}
+            <input type="hidden" name="next" value="{{ next }}">
+            <button type="submit" class="btn btn-success btn-block">Register</button>
+
+        </form>
+    </div>
+</div>
+{% endblock %}
