@@ -45,7 +45,7 @@ SECRET_KEY = 'django-insecure-s4)-@-n&(8ari8@%)*%izs9e(6okacp!gzp&-*uxsx1avc_@bd
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['geog5221-stations.herokuapp.com']
 
 
 # Application definition
