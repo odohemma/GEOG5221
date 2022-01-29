@@ -68,8 +68,8 @@ class Retailer(AbstractBaseUser, PermissionsMixin):
     address = models.CharField(max_length=255)
     local_government = models.CharField(max_length=150, verbose_name="Local Government")
     state = models.CharField(max_length=150)    
-    latitude = models.DecimalField(blank=True, null=True, validators=[MinValueValidator(-90.0), MaxValueValidator(90.0), DecimalValidator (max_digits=10, decimal_places=6)], max_digits=10, decimal_places=6, help_text="Kindly restrict the latitude values to a maximum of six decimal places.<br/> Unless you intend to change your location, you can skip this section in the profile page.")
-    longitude = models.DecimalField(blank=True, null=True, validators=[MinValueValidator(-180.0), MaxValueValidator(180.0), DecimalValidator (max_digits=10, decimal_places=6)], max_digits=10, decimal_places=6, help_text="Kindly restrict the longitude values to a maximum of six decimal places.<br/> Unless you intend to change your location, you can skip this section in the profile page.")
+    latitude = models.DecimalField(blank=True, null=True, validators=[MinValueValidator(-90.0), MaxValueValidator(90.0), DecimalValidator (max_digits=10, decimal_places=6)], max_digits=10, decimal_places=6, help_text="Kindly input the WGS84 latitude and, restrict the values to a maximum of six decimal places.<br/> Unless you intend to change your location, you can skip this section in the profile page.")
+    longitude = models.DecimalField(blank=True, null=True, validators=[MinValueValidator(-180.0), MaxValueValidator(180.0), DecimalValidator (max_digits=10, decimal_places=6)], max_digits=10, decimal_places=6, help_text="Kindly input the WGS84 longitude and, restrict the values to a maximum of six decimal places.<br/> Unless you intend to change your location, you can skip this section in the profile page.")
 
     email = models.EmailField(unique=True, null=True, blank=True)    
     phone = models.CharField(max_length=50)
@@ -108,6 +108,7 @@ class Retailer(AbstractBaseUser, PermissionsMixin):
         self.longitude = self.longitude
 
         # Point is obtained from latitude/longitude
+        # The srid for WGS84 Geographic Coordinate System is 4326
         if self.longitude and self.latitude:
             self.coordinates = Point(
                 float(self.longitude),
