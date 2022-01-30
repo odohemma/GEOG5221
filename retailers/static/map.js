@@ -298,8 +298,8 @@ map.on("moveend", render_carwash_markers);
 var options = {
   // Radio buttons to ensure a user views the distrbution of only one energy product at a time
   exclusiveGroups: ["<span style='font-weight: bold;'>Energy Products (In Stock)</span>"],
-  // Enable a checkbox to toggle 'Extras' (and any non-exclusive group).
-  groupCheckboxes: true
+  // Disable checkbox to toggle 'Extras' (and any non-exclusive group).
+  groupCheckboxes: false
 };
 
 // var layerControl = L.control.layers(baseLayers).addTo(map);
