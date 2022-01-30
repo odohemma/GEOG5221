@@ -9,6 +9,6 @@ class RetailerSerializer(serializers.GeoFeatureModelSerializer):
     class Meta:
         """Retailer serializer meta class."""
 
-        fields = ("id", "name", "phone","pms_rate","pms_stock","ago_rate","ago_stock","dpk_rate","dpk_stock","lpg_rate","lpg_stock", "auto_shop", "supermart")
+        fields = ("id", "name", "phone","pms_rate","pms_stock","ago_rate","ago_stock","dpk_rate","dpk_stock","lpg_rate","lpg_stock", "auto_shop", "supermart", "car_wash")
         geo_field = "coordinates"
         model = Retailer

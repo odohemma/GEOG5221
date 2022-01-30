@@ -96,6 +96,7 @@ class Retailer(AbstractBaseUser, PermissionsMixin):
     #Extras
     auto_shop = models.BooleanField(verbose_name='Auto Shop', default=False)
     supermart = models.BooleanField(default=False)
+    car_wash = models.BooleanField(verbose_name='Car Wash', default=False)
 
     objects = RetailerManager()
 

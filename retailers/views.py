@@ -43,7 +43,7 @@ class ProfileView(UpdateView):
     #The UpdateView is used for constructing simple forms. forms.ModelForm is used for the creation of sophisticated forms.
     model = Retailer
     fields = ['pms_rate', 'pms_stock', 'ago_rate', 'ago_stock', 'dpk_rate', 'dpk_stock', 
-    'lpg_rate', 'lpg_stock', 'auto_shop', 'supermart', 'name', 'phone', 'latitude',
+    'lpg_rate', 'lpg_stock', 'auto_shop', 'supermart', 'car_wash', 'name', 'phone', 'latitude',
     'longitude', 'picture']
     template_name = 'registration/profile.html'
 

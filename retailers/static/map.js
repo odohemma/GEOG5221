@@ -51,6 +51,10 @@ function superMartFilter(layer) {
   return filter_list.includes(layer.properties.supermart)
 }
 
+function carWashFilter(layer) {
+  return filter_list.includes(layer.properties.car_wash)
+}
+
 
 var pms_Icon = new L.icon({
   iconUrl: "/static/images/petrol-pump 64px.png",
@@ -213,6 +217,32 @@ async function render_supermart_markers() {
 }
 
 
+var carwash_Icon = new L.icon({
+  iconUrl: "/static/images/shopping-cart 64px.png",
+  iconSize:     [42, 42], // size of the icon
+  iconAnchor:   [21, 42], // point of the icon which will correspond to marker's location
+  popupAnchor:  [0, -32] // point from which the popup should open relative to the iconAnchor
+});
+
+var carwash = new L.LayerGroup();
+async function render_carwash_markers() {
+  const carwash_markers = await load_markers();
+  L.geoJSON(carwash_markers, {
+    filter: carWashFilter,
+    pointToLayer: function(feature,latlng){
+      return L.marker(latlng,{icon: carWash_Icon});
+    }
+  })
+    .bindPopup(
+      (layer) => 'Name: ' + layer.feature.properties.name  
+    + '<br/>' + 'Phone: ' + layer.feature.properties.phone
+    + '<br/>' + 'Service: ' + 'Car Wash'
+    + '<br/>' + 'Open: ' + layer.feature.properties.car_wash
+      )
+    .addTo(carwash);
+}
+
+
 
 // Set 'mapnik' and 'pms_pump' (petrol pumps) constants to be the default 
 // basemap and energy product to be displayed respectively.
@@ -237,6 +267,7 @@ var groupedOverlays = {
   "<span style='font-weight: bold;'>Extras</span>": {
     "Auto Shop": autoshop,
     "Supermart": supermart,
+    "Car Wash": carwash,
   }
 };
 
