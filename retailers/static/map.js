@@ -218,7 +218,7 @@ async function render_supermart_markers() {
 
 
 var carwash_Icon = new L.icon({
-  iconUrl: "/static/images/shopping-cart 64px.png",
+  iconUrl: "/static/images/car-wash 64px.png",
   iconSize:     [42, 42], // size of the icon
   iconAnchor:   [21, 42], // point of the icon which will correspond to marker's location
   popupAnchor:  [0, -32] // point from which the popup should open relative to the iconAnchor
