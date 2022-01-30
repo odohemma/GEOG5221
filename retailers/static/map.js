@@ -297,7 +297,7 @@ map.on("moveend", render_carwash_markers);
 
 var options = {
   // Radio buttons to ensure a user views the distrbution of only one energy product at a time
-  exclusiveGroups: ["<span style='font-weight: bold;'>Energy Products (In Stock)</span>", "<span style='font-weight: bold;'>Extras</span>"],
+  exclusiveGroups: ["<span style='font-weight: bold;'>Energy Products (In Stock)</span>"],
   // Disable "one click select all" checkbox for 'Extras' (and any non-exclusive group).
   groupCheckboxes: false
 };
