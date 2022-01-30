@@ -230,7 +230,7 @@ async function render_carwash_markers() {
   L.geoJSON(carwash_markers, {
     filter: carWashFilter,
     pointToLayer: function(feature,latlng){
-      return L.marker(latlng,{icon: carWash_Icon});
+      return L.marker(latlng,{icon: carwash_Icon});
     }
   })
     .bindPopup(
