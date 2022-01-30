@@ -246,7 +246,7 @@ async function render_carwash_markers() {
 
 // Set 'mapnik' and 'pms_pump' (petrol pumps) constants to be the default 
 // basemap and energy product to be displayed respectively.
-const map = L.map("map", { layers: [mapnik, pms_pump], minZoom: 6 });
+const map = L.map("map", { layers: [mapnik, pms_pump], minZoom: 4 });
 
 /* map.locate()
   .on("locationfound", (e) => map.setView(e.latlng, 14))
