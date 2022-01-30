@@ -290,6 +290,9 @@ map.on("moveend", render_autoshop_markers);
 map.on("mouseover", render_supermart_markers);
 map.on("moveend", render_supermart_markers);
 
+map.on("mouseover", render_carwash_markers);
+map.on("moveend", render_carwash_markers);
+
 
 
 var options = {
