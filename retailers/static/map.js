@@ -75,7 +75,7 @@ async function render_pms_markers() {
     .bindPopup(
       (layer) => 'Name: ' + layer.feature.properties.name  
     + '<br/>' + 'Phone: ' + layer.feature.properties.phone
-    + '<br/>' + 'Price per litre: ₦' + layer.feature.properties.pms_rate
+    + '<br/>' + 'Petrol price per litre: ₦' + layer.feature.properties.pms_rate
     + '<br/>' + 'In stock: ' + layer.feature.properties.pms_stock
     )
     
@@ -102,7 +102,7 @@ async function render_ago_markers() {
     .bindPopup(
       (layer) => 'Name: ' + layer.feature.properties.name  
     + '<br/>' + 'Phone: ' + layer.feature.properties.phone
-    + '<br/>' + 'Price per litre: ₦' + layer.feature.properties.ago_rate
+    + '<br/>' + 'Diesel price per litre: ₦' + layer.feature.properties.ago_rate
     + '<br/>' + 'In stock: ' + layer.feature.properties.ago_stock
       )
     .addTo(ago_pump);
@@ -128,7 +128,7 @@ async function render_dpk_markers() {
     .bindPopup(
       (layer) => 'Name: ' + layer.feature.properties.name  
     + '<br/>' + 'Phone: ' + layer.feature.properties.phone
-    + '<br/>' + 'Price per litre: ₦' + layer.feature.properties.dpk_rate
+    + '<br/>' + 'Kerosene price per litre: ₦' + layer.feature.properties.dpk_rate
     + '<br/>' + 'In stock: ' + layer.feature.properties.dpk_stock
       )
     .addTo(dpk_pump);
@@ -154,7 +154,7 @@ async function render_lpg_markers() {
     .bindPopup(
       (layer) => 'Name: ' + layer.feature.properties.name  
     + '<br/>' + 'Phone: ' + layer.feature.properties.phone
-    + '<br/>' + 'Price per kg: ₦' + layer.feature.properties.lpg_rate
+    + '<br/>' + 'LPG price per kg: ₦' + layer.feature.properties.lpg_rate
     + '<br/>' + 'In stock: ' + layer.feature.properties.lpg_stock
       )
     .addTo(lpg_pump);
