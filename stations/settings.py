@@ -105,16 +105,7 @@ WSGI_APPLICATION = 'stations.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 
-# Local DB settings
-""" DATABASES = {
-    'default': {
-        'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': 'stations',
-        "PASSWORD": "",
-        'USER': 'postgres',
-    }
-} """
-
+# See Local DB settings in local_settings.py. It's not deployed to GitHub.
 
 # Heroku DB settings
 DATABASES = {
