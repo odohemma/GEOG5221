@@ -41,6 +41,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-s4)-@-n&(8ari8@%)*%izs9e(6okacp!gzp&-*uxsx1avc_@bd'
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -185,8 +186,3 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
-
-# GDAL_LIBRARY_PATH = os.environ.get('GDAL_LIBRARY_PATH')
-# GEOS_LIBRARY_PATH = '/app/.geodjango/geos/lib/libgeos_c.so'
-# GDAL_LIBRARY_PATH = '/app/.geodjango/gdal/lib/libgdal.so'
-
