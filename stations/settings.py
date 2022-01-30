@@ -45,7 +45,9 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['geog5221-stations.herokuapp.com']
+ALLOWED_HOSTS = ['*',
+    'geog5221-stations.herokuapp.com',
+]
 
 
 # Application definition
