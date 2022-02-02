@@ -73,10 +73,10 @@ async function render_pms_markers() {
     }
   })
     .bindPopup(
-      (layer) => 'Name: ' + layer.feature.properties.name  
-    + '<br/>' + 'Phone: ' + layer.feature.properties.phone
+      (layer) => 'Name: ' + layer.feature.properties.name      
     + '<br/>' + 'Petrol price per litre: ₦' + layer.feature.properties.pms_rate
     + '<br/>' + 'In stock: ' + layer.feature.properties.pms_stock
+    + '<br/>' + 'Phone: ' + layer.feature.properties.phone
     )
     
     .addTo(pms_pump);
@@ -100,10 +100,10 @@ async function render_ago_markers() {
     }
   })
     .bindPopup(
-      (layer) => 'Name: ' + layer.feature.properties.name  
-    + '<br/>' + 'Phone: ' + layer.feature.properties.phone
+      (layer) => 'Name: ' + layer.feature.properties.name      
     + '<br/>' + 'Diesel price per litre: ₦' + layer.feature.properties.ago_rate
     + '<br/>' + 'In stock: ' + layer.feature.properties.ago_stock
+    + '<br/>' + 'Phone: ' + layer.feature.properties.phone
       )
     .addTo(ago_pump);
 }
@@ -126,10 +126,10 @@ async function render_dpk_markers() {
     }
   })
     .bindPopup(
-      (layer) => 'Name: ' + layer.feature.properties.name  
-    + '<br/>' + 'Phone: ' + layer.feature.properties.phone
+      (layer) => 'Name: ' + layer.feature.properties.name     
     + '<br/>' + 'Kerosene price per litre: ₦' + layer.feature.properties.dpk_rate
     + '<br/>' + 'In stock: ' + layer.feature.properties.dpk_stock
+    + '<br/>' + 'Phone: ' + layer.feature.properties.phone
       )
     .addTo(dpk_pump);
 }
@@ -152,10 +152,10 @@ async function render_lpg_markers() {
     }
   })
     .bindPopup(
-      (layer) => 'Name: ' + layer.feature.properties.name  
-    + '<br/>' + 'Phone: ' + layer.feature.properties.phone
+      (layer) => 'Name: ' + layer.feature.properties.name      
     + '<br/>' + 'LPG price per kg: ₦' + layer.feature.properties.lpg_rate
     + '<br/>' + 'In stock: ' + layer.feature.properties.lpg_stock
+    + '<br/>' + 'Phone: ' + layer.feature.properties.phone
       )
     .addTo(lpg_pump);
 }
@@ -182,10 +182,10 @@ async function render_autoshop_markers() {
     }
   })
     .bindPopup(
-      (layer) => 'Name: ' + layer.feature.properties.name  
-    + '<br/>' + 'Phone: ' + layer.feature.properties.phone
+      (layer) => 'Name: ' + layer.feature.properties.name      
     + '<br/>' + 'Service: ' + 'Autoshop'
     + '<br/>' + 'Open: ' + layer.feature.properties.auto_shop
+    + '<br/>' + 'Phone: ' + layer.feature.properties.phone
       )
     .addTo(autoshop);
 }
@@ -208,10 +208,10 @@ async function render_supermart_markers() {
     }
   })
     .bindPopup(
-      (layer) => 'Name: ' + layer.feature.properties.name  
-    + '<br/>' + 'Phone: ' + layer.feature.properties.phone
+      (layer) => 'Name: ' + layer.feature.properties.name      
     + '<br/>' + 'Service: ' + 'Supermart'
     + '<br/>' + 'Open: ' + layer.feature.properties.supermart
+    + '<br/>' + 'Phone: ' + layer.feature.properties.phone
       )
     .addTo(supermart);
 }
@@ -234,10 +234,10 @@ async function render_carwash_markers() {
     }
   })
     .bindPopup(
-      (layer) => 'Name: ' + layer.feature.properties.name  
-    + '<br/>' + 'Phone: ' + layer.feature.properties.phone
+      (layer) => 'Name: ' + layer.feature.properties.name      
     + '<br/>' + 'Service: ' + 'Car Wash'
     + '<br/>' + 'Open: ' + layer.feature.properties.car_wash
+    + '<br/>' + 'Phone: ' + layer.feature.properties.phone
       )
     .addTo(carwash);
 }
