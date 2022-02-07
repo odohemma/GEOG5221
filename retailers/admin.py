@@ -3,15 +3,15 @@ from django.contrib.gis import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 
 from .models import Retailer
-from .forms import UserCreationForm, UserChangeForm
+from .forms import RetailerCreationForm, RetailerChangeForm
 
 # Register your models here.
 class ProductAdmin(admin.ModelAdmin):
     list_display = ("id", "pms_rate", "pms_stock", "ago_rate", "ago_stock", "dpk_rate", "dpk_stock", "lpg_rate", "lpg_stock", "auto_shop", "supermart", "car_wash")
 
 class RetailerAdmin(BaseUserAdmin):
-    form = UserChangeForm
-    add_form = UserCreationForm
+    form = RetailerChangeForm
+    add_form = RetailerCreationForm
 
     list_display = ('id', 'username', 'email', 'name', 'phone', 'date_business_started', 
     'is_staff', 'is_superuser', 'latitude', 'longitude', 'coordinates', 'pms_rate', 'pms_stock', 

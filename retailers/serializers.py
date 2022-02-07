@@ -4,7 +4,7 @@ from .models import Retailer
 
 
 class RetailerSerializer(serializers.GeoFeatureModelSerializer):
-    """Retailer GeoJSON serializer."""
+    """This class enables the creation of GeoJSON for the Retailer table."""
 
     class Meta:
         """Retailer serializer meta class."""

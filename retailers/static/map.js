@@ -16,8 +16,11 @@ const baseLayers = {
 };
 
 
+//Set variable constant to filter petroleum products to filter out products not in stock.
 const filter_list = [true];
 
+
+//Function to load markers from the site's API as GeoJSON objects.
 async function load_markers() {
   const markers_url = `/api/retailers/?in_bbox=${map.getBounds().toBBoxString()}`
   const response = await fetch(markers_url)
@@ -26,36 +29,43 @@ async function load_markers() {
 }
 
 
-
+//Function to filter in only stations that have PMS (petrol) in stock.
 function pmsInStockFilter(layer) {
   return filter_list.includes(layer.properties.pms_stock)
 }
 
+//Function to filter in only stations that have AGO (diesel) in stock.
 function agoInStockFilter(layer) {
   return filter_list.includes(layer.properties.ago_stock)
 }
 
+//Function to filter in only stations that have DPK (kerosene) in stock.
 function dpkInStockFilter(layer) {
   return filter_list.includes(layer.properties.dpk_stock)
 }
 
+//Function to filter in only stations that have LPG (cooking gas) in stock.
 function lpgInStockFilter(layer) {
   return filter_list.includes(layer.properties.lpg_stock)
 }
 
+//Function to filter in only stations that have an Auto Shop.
 function autoShopFilter(layer) {
   return filter_list.includes(layer.properties.auto_shop)
 } 
 
+//Function to filter in only stations that have a Supermart.
 function superMartFilter(layer) {
   return filter_list.includes(layer.properties.supermart)
 }
 
+//Function to filter in only stations that have a Car Wash.
 function carWashFilter(layer) {
   return filter_list.includes(layer.properties.car_wash)
 }
 
 
+//Declaration of icon and settings for PMS markers.
 var pms_Icon = new L.icon({
   iconUrl: "/static/images/petrol-pump 64px.png",
   iconSize:     [42, 42], // size of the icon
@@ -83,6 +93,7 @@ async function render_pms_markers() {
 }
 
 
+//Declaration of icon and settings for AGO (diesel) markers.
 var ago_Icon = new L.icon({
   iconUrl: "/static/images/diesel-pump 64px.png",
   iconSize:     [42, 42], // size of the icon
@@ -109,6 +120,7 @@ async function render_ago_markers() {
 }
 
 
+//Declaration of icon and settings for DPK (Kerosene) markers.
 var dpk_Icon = new L.icon({
   iconUrl: "/static/images/kerosene-pump 64px.png",
   iconSize:     [42, 42], // size of the icon
@@ -135,6 +147,7 @@ async function render_dpk_markers() {
 }
 
 
+//Declaration of icon and settings for LPG (Cooking Gas) markers.
 var lpg_Icon = new L.icon({
   iconUrl: "/static/images/gas 64px.png",
   iconSize:     [50, 50], // size of the icon
@@ -161,10 +174,11 @@ async function render_lpg_markers() {
 }
 
 
-// A layer that removes all energy products.
+// A layer that removes all energy products from the map display.
 var clear_all = new L.LayerGroup();
 
 
+//Declaration of icon and settings for PMS markers.
 var autoshop_Icon = new L.icon({
   iconUrl: "/static/images/garage 64px.png",
   iconSize:     [42, 42], // size of the icon
@@ -191,6 +205,7 @@ async function render_autoshop_markers() {
 }
 
 
+//Declaration of icon and settings for Supermart markers.
 var supermart_Icon = new L.icon({
   iconUrl: "/static/images/shopping-cart 64px.png",
   iconSize:     [42, 42], // size of the icon
@@ -217,6 +232,7 @@ async function render_supermart_markers() {
 }
 
 
+//Declaration of icon and settings for Car Wash markers.
 var carwash_Icon = new L.icon({
   iconUrl: "/static/images/car-wash 64px.png",
   iconSize:     [42, 42], // size of the icon
@@ -272,24 +288,31 @@ var groupedOverlays = {
 };
 
 
+//Render PMS markers when the mouse is moved or the map panned.
 map.on("mouseover", render_pms_markers);
 map.on("moveend", render_pms_markers);
 
+//Render AGO markers when the mouse is moved or the map panned.
 map.on("mouseover", render_ago_markers);
 map.on("moveend", render_ago_markers);
 
+//Render DPK markers when the mouse is moved or the map panned.
 map.on("mouseover", render_dpk_markers);
 map.on("moveend", render_dpk_markers);
 
+//Render LPG markers when the mouse is moved or the map panned.
 map.on("mouseover", render_lpg_markers);
 map.on("moveend", render_lpg_markers);
 
+//Render Autoshop markers when the mouse is moved or the map panned.
 map.on("mouseover", render_autoshop_markers);
 map.on("moveend", render_autoshop_markers);
 
+//Render Supermart markers when the mouse is moved or the map panned.
 map.on("mouseover", render_supermart_markers);
 map.on("moveend", render_supermart_markers);
 
+//Render Car Wash markers when the mouse is moved or the map panned.
 map.on("mouseover", render_carwash_markers);
 map.on("moveend", render_carwash_markers);
 

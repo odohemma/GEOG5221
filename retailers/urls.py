@@ -5,5 +5,5 @@ from retailers.views import RetailersMapView
 
 
 urlpatterns = [
-    path('', RetailersMapView.as_view(), name='home'),
+    path('', RetailersMapView.as_view(), name='home'), #Homepage URL
 ]

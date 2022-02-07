@@ -1,13 +1,6 @@
-from django.shortcuts import render, redirect
 from django.views.generic.base import TemplateView
-
-from django.contrib.auth import authenticate, login as auth_login, logout
 from django.contrib.auth import get_user_model
-from django.contrib import messages
-from django.contrib.auth.forms import AuthenticationForm
 
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse, reverse_lazy
 
@@ -22,6 +15,8 @@ class RetailersMapView(TemplateView):
 
 
 class RegistrationView(CreateView):
+    """This class serves the webpage needed for a retailer to get registered on the app."""
+
     template_name = 'registration/register.html'
     form_class = RegistrationForm
 
@@ -40,6 +35,8 @@ class RegistrationView(CreateView):
 
 
 class ProfileView(UpdateView):
+    """A class to serve a webpage that allow a retailer to update the outlet's profile."""
+
     #The UpdateView is used for constructing simple forms. forms.ModelForm is used for the creation of sophisticated forms.
     model = Retailer
     fields = ['pms_rate', 'pms_stock', 'ago_rate', 'ago_stock', 'dpk_rate', 'dpk_stock', 
@@ -55,6 +52,8 @@ class ProfileView(UpdateView):
 
 
 class UserDelete(DeleteView):
+    """A class to enable a retailer delete the outlet's account from the database."""
+    
     model = get_user_model()
     success_url = reverse_lazy('home')
     template_name = 'registration/user_confirm_delete.html'
