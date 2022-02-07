@@ -40,10 +40,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = env('SECRET_KEY')
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*',
     'geog5221-stations.herokuapp.com',
@@ -108,7 +108,7 @@ WSGI_APPLICATION = 'stations.wsgi.application'
 # See Local DB settings in local_settings.py. It's not deployed to GitHub.
 
 # Heroku DB settings
-""" DATABASES = {
+DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
         'NAME': env('POSTGRES_DB_NAME'),
@@ -117,7 +117,7 @@ WSGI_APPLICATION = 'stations.wsgi.application'
         'HOST': env('POSTGRES_HOST'),
         'PORT': env('POSTGRES_PORT'),
     }
-} """
+}
 
 
 # Password validation
@@ -180,16 +180,3 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
-
-SECRET_KEY = 'django-insecure-s4)-@-n&(8ari8@%)*%izs9e(6okacp!gzp&-*uxsx1avc_@bd'
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': 'stations',
-        "PASSWORD": "ginika87",
-        'USER': 'postgres',
-        "HOST": "localhost",
-        "PORT": "5432",
-    }
-}
