@@ -289,7 +289,6 @@ var groupedOverlays = {
 
 
 //Render PMS markers when the mouse is moved or the map panned.
-map.on("preclick", render_pms_markers);
 map.on("mouseover", render_pms_markers);
 map.on("moveend", render_pms_markers);
 
